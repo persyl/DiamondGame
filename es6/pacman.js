@@ -4,6 +4,7 @@ class PacMan {
 
   constructor(doc) {
     this.doc = doc;
+    this.diRed = '#a7100c';
     this.canvas = {
       'id': 'gameCanvas',
       'width': 800,
@@ -38,7 +39,7 @@ class PacMan {
     this.doc.body.appendChild(divElement);
 
     this.fillCanvas();
-    this.drawOneMarker(this.getDefaultMarker());
+    this.drawOneMarker(new Marker(50, 50, 'greentest', "rgb(51, 190, 0)"));
     this.drawLogo();
   }
 
@@ -49,16 +50,11 @@ class PacMan {
     this.ctx.fill();
   }
 
-  getDefaultMarker() {
-    const fillStyle = "rgb(51, 190, 0)";
-    return new Marker(50, 50, 'foobar', fillStyle);
-  }
-
   drawOneMarker(marker) {
     // Draw an individual marker.
     this.ctx.beginPath();
     this.ctx.lineWidth = '1';
-    this.ctx.strokeStyle = '#a7100c';
+    this.ctx.strokeStyle = this.diRed;
     this.ctx.fillStyle = marker.fillStyle;
     this.ctx.rect(20, 20, marker.x, marker.y);
     this.ctx.stroke();
@@ -68,12 +64,14 @@ class PacMan {
 
 
   drawLogo() {
+    const diLogoMarker = new Marker(700, 60, 'dilogo', this.diRed)
+
     this.ctx.beginPath();
     this.ctx.lineWidth = '3';
     this.ctx.strokeStyle = 'white';
-    this.ctx.fillStyle = '#a7100c';
+    this.ctx.fillStyle = diLogoMarker.fillStyle;
     const radius = 50;
-    this.ctx.arc(700, 60, radius, 0, 2 * Math.PI, false);
+    this.ctx.arc(diLogoMarker.x, diLogoMarker.y, radius, 0, 2 * Math.PI, false);
     this.ctx.stroke();
     this.ctx.fill();
     this.ctx.closePath();
@@ -81,7 +79,7 @@ class PacMan {
     const logoImg = new Image();
     logoImg.src = './images/dilogo.png';
     logoImg.onload = () => {
-      this.ctx.drawImage(logoImg, 650, 14, 95, 90);
+      this.ctx.drawImage(logoImg, diLogoMarker.x - 50, diLogoMarker.y - 46, 95, 90);
     }
   }
 
