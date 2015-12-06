@@ -2,4 +2,6 @@
 import PacMan from './pacman';
 
 const DiPacMan = new PacMan(document);
-DiPacMan.init();
+window.onload = function () {
+  DiPacMan.init();
+};

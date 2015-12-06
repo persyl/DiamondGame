@@ -39,6 +39,7 @@ class PacMan {
 
     this.fillCanvas();
     this.drawOneMarker(this.getDefaultMarker());
+    this.drawLogo();
   }
 
   fillCanvas() {
@@ -57,23 +58,31 @@ class PacMan {
     // Draw an individual marker.
     this.ctx.beginPath();
     this.ctx.lineWidth = '1';
-    this.ctx.strokeStyle = 'red';
+    this.ctx.strokeStyle = '#a7100c';
     this.ctx.fillStyle = marker.fillStyle;
     this.ctx.rect(20, 20, marker.x, marker.y);
     this.ctx.stroke();
     this.ctx.fill();
     this.ctx.closePath();
+  }
 
+
+  drawLogo() {
     this.ctx.beginPath();
     this.ctx.lineWidth = '3';
     this.ctx.strokeStyle = 'white';
-    this.ctx.fillStyle = 'red';
-
-    const radius = 20;
-    this.ctx.arc(marker.x * 4, marker.x, radius, 0, 2 * Math.PI, false);
+    this.ctx.fillStyle = '#a7100c';
+    const radius = 50;
+    this.ctx.arc(700, 60, radius, 0, 2 * Math.PI, false);
     this.ctx.stroke();
     this.ctx.fill();
     this.ctx.closePath();
+
+    const logoImg = new Image();
+    logoImg.src = './images/dilogo.png';
+    logoImg.onload = () => {
+      this.ctx.drawImage(logoImg, 650, 14, 95, 90);
+    }
   }
 
   toString() {
