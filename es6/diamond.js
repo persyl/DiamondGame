@@ -1,4 +1,4 @@
-import Marker from './marker';
+import City from './city';
 import Africa from './africa';
 import steps from './steps';
 
@@ -24,10 +24,15 @@ class Diamond {
     init() {
         this.initGameBoard();
         var ctx = this.canvas[1].element.getContext('2d');
-        var home1Marker = new Marker(40, 40, 0, 'home1Marker', "white", "red");
-        Marker.drawOneMarker(ctx, home1Marker, 240, 40);
-        var home2Marker = new Marker(40, 40, 0, 'home2Marker', "white", "red");
-        Marker.drawOneMarker(ctx, home2Marker, 480, 100);
+        var tanger = new City('TANGER', true);
+        tanger.draw(ctx, 170, 5);
+        
+        var kairo = new City('KAIRO', true);
+        kairo.draw(ctx, 560, 80);
+        
+        var tunis = new City('Tunis');
+        tunis.draw(ctx, 300, 40);
+        
         steps.draw(ctx);
     }
 

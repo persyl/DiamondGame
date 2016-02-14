@@ -1,7 +1,7 @@
     //Custom Marker object
     class Marker {
 
-        constructor(x, y, radius, type, strokeStyle, fillStyle) {
+        constructor(x, y, radius, name, strokeStyle, fillStyle) {
             this.x = x;
             this.y = y;
             this.radius = radius;
@@ -9,7 +9,7 @@
             this.prevY = -1;
             this.strokeStyle = strokeStyle;
             this.fillStyle = fillStyle;
-            this.type = type;
+            this.markerName = name;
         }
 
         static drawOneMarker(ctx, marker, xPos, yPos) {
@@ -29,7 +29,7 @@
         }
 
         toString() {
-            return "Custom Marker object";
+            return `This is a marker with name ${this.markerName}`;
         }
     }
     export default Marker;
