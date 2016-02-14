@@ -25,7 +25,15 @@ class PacMan {
         this.fillCanvas(this.canvas[0].element.getContext('2d'));
         this.drawOneMarker(this.canvas[0].element.getContext('2d'), new Marker(100, 100, 'greentest', "rgb(51, 190, 0)"), 20, 20);
         this.drawLogo(this.canvas[0].element.getContext('2d'));
-        this.drawLogo(this.canvas[1].element.getContext('2d'));
+        //Test moving item over canvas
+        var demoX = 0;
+        this.drawOneMarker(this.canvas[1].element.getContext('2d'), new Marker(90, 120, 'demo', "rgb(51, 190, 0)"), demoX, 50);
+        setInterval(() => {
+            demoX++;
+            this.clearCanvas(1);
+            this.drawOneMarker(this.canvas[1].element.getContext('2d'), new Marker(90, 120, 'demo', "rgb(51, 190, 0)"), demoX, 50);
+            if(demoX>=this.canvas[1].width) demoX = 0;
+        }, 10);
     }
 
     initGameBoard() {
@@ -54,13 +62,11 @@ class PacMan {
             elmt.element.setAttribute('height', elmt.height);
             container.appendChild(elmt.element);
         });
+    }
 
-        // this.canvas[0].element = this.doc.createElement('canvas');
-        // this.canvas[0].element.setAttribute('id', this.canvas[0].id);
-        // //Do not set width/height on canvas with CSS! Will affect drawing!
-        // this.canvas[0].element.setAttribute('width', this.canvas[0].width);
-        // this.canvas[0].element.setAttribute('height', this.canvas[0].height);
-        // container.appendChild(this.canvas[0].element);
+    clearCanvas(id) {
+        var ctx = this.canvas[id].element.getContext('2d');
+        ctx.clearRect(0, 0, this.canvas[id].width, this.canvas[id].height);
     }
 
     fillCanvas(ctx) {
