@@ -1,7 +1,7 @@
 // import Point from './Point.js';
-import PacMan from './pacman';
+import Diamond from './diamond';
 
-const DiPacMan = new PacMan(document);
+const diamondGame = new Diamond(document);
 window.onload = function () {
-  DiPacMan.init();
+  diamondGame.init();
 };
