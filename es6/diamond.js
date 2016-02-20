@@ -26,13 +26,19 @@ class Diamond {
         var ctx = this.canvas[1].element.getContext('2d');
         var tanger = new City('TANGER', true);
         tanger.draw(ctx, 170, 5);
-        
+
+        var canaria = new City('CANARIA', true);
+        canaria.draw(ctx, 0, 60);
+
+        var marrakech = new City('Marrakech');
+        marrakech.draw(ctx, 70, 130);
+
         var kairo = new City('KAIRO', true);
         kairo.draw(ctx, 560, 80);
-        
+
         var tunis = new City('Tunis');
         tunis.draw(ctx, 300, 40);
-        
+
         steps.draw(ctx);
     }
 
