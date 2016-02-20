@@ -13,11 +13,12 @@ class City extends Marker {
         this.size = size;
     }
 
-    draw(ctx, xPos, yPos) {
+    draw(ctx, xPos, yPos, xPosText) {
+        if(xPosText === undefined) xPosText = xPos;
         Marker.drawOneMarker(ctx, this, xPos, yPos);
         ctx.font = "11px Arial";
-        ctx.fillStyle = 'black';
-        ctx.fillText(this.markerName, xPos, (yPos + this.size / 2));
+        ctx.fillStyle = 'white';
+        ctx.fillText(this.markerName, xPosText, (yPos + this.size / 2));
         }
     }
 

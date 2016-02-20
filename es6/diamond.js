@@ -25,19 +25,19 @@ class Diamond {
         this.initGameBoard();
         var ctx = this.canvas[1].element.getContext('2d');
         var tanger = new City('TANGER', true);
-        tanger.draw(ctx, 170, 5);
+        tanger.draw(ctx, 170, 5, 175);
 
         var canaria = new City('CANARIA', true);
-        canaria.draw(ctx, 0, 60);
+        canaria.draw(ctx, 0, 60, 5);
 
         var marrakech = new City('Marrakech');
-        marrakech.draw(ctx, 70, 130);
+        marrakech.draw(ctx, 70, 130, 65);
 
         var kairo = new City('KAIRO', true);
-        kairo.draw(ctx, 560, 80);
+        kairo.draw(ctx, 560, 80, 572);
 
         var tunis = new City('Tunis');
-        tunis.draw(ctx, 300, 40);
+        tunis.draw(ctx, 300, 40, 305);
 
         steps.draw(ctx);
     }
