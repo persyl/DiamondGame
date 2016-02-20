@@ -7,6 +7,7 @@ class Steps {
             [1, 2],
             [2, 3],
             [3, 4],
+            [3, 14],
             [4, 5],
             [5, 6],
             [6, 7],
@@ -23,8 +24,21 @@ class Steps {
             [17, 13],
             [18, 17],
             [19, 18],
+            [20, 19],
+            [20, 11],
+            [21, 20],
+            [22, 21],
+            [22, 19],
+            [23, 22],
+            [24, 23],
+            [25, 17],
+            [25, 24],
+            [26, 25],
+            [26, 16],
+            [27, 21],
+            [28, 27],
         ];
-        this.config = [
+        this.steps = [
             new Step(1, 200, 80),
             new Step(2, 150, 90),
             new Step(3, 140, 130),
@@ -44,11 +58,20 @@ class Steps {
             new Step(17, 260, 240),
             new Step(18, 320, 220),
             new Step(19, 340, 160),
+            new Step(20, 300, 100),
+            new Step(21, 400, 110),
+            new Step(22, 400, 160),
+            new Step(23, 440, 210),
+            new Step(24, 380, 240),
+            new Step(25, 320, 290),
+            new Step(26, 260, 340),
+            new Step(27, 480, 130),
+            new Step(28, 530, 160),
         ];
     }
 
     draw(ctx) {
-        this.config.forEach((obj, idx, all) => {
+        this.steps.forEach((obj, idx, all) => {
             var stepMarker = new Marker(0, 0, 12, 'stepMarker', "white", "#dddddd");
             Marker.drawOneMarker(ctx, stepMarker, obj.x, obj.y);
             ctx.font = "11px Arial";
@@ -58,7 +81,7 @@ class Steps {
             const objRelated = this.getRelations(obj.id);
             objRelated.forEach((relId, relIdx, relAll) => {
                 ctx.beginPath();
-                ctx.moveTo(this.config[(relId - 1)].x, this.config[(relId - 1)].y);
+                ctx.moveTo(this.steps[(relId - 1)].x, this.steps[(relId - 1)].y);
                 ctx.lineTo(obj.x, obj.y);
                 ctx.strokeStyle = '#D4A190';
                 ctx.stroke();
