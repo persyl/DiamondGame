@@ -72,7 +72,20 @@ class Diamond {
 
     addPalmTrees() {
         var palmTree = new PalmTree();
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 0, 0);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 80, 60, 50);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 350, 0, 70);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 400, 230, 50);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 100, 260, 50);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 570, 530, 70);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 775, 660, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 460, 690, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 490, 710, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 520, 710, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 550, 710, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 700, 430, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 730, 400, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 760, 360, 30);
+        palmTree.draw(this.canvas[0].element.getContext('2d'), 780, 320, 30);
     }
 
     clearCanvas(id) {
