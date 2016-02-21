@@ -1,6 +1,7 @@
 import City from './city';
 import Africa from './africa';
 import PalmTree from './palmtree';
+import Boat from './boat';
 import steps from './steps';
 
 class Diamond {
@@ -56,6 +57,7 @@ class Diamond {
         africa.draw(this.canvas[0].element.getContext('2d'), 0, 0);
 
         this.addPalmTrees();
+        this.addBoats();
     }
 
     addAllCanvas(container) {
@@ -86,6 +88,13 @@ class Diamond {
         palmTree.draw(this.canvas[0].element.getContext('2d'), 730, 400, 30);
         palmTree.draw(this.canvas[0].element.getContext('2d'), 760, 360, 30);
         palmTree.draw(this.canvas[0].element.getContext('2d'), 780, 320, 30);
+    }
+
+    addBoats() {
+        var boat = new Boat();
+     boat.draw(this.canvas[0].element.getContext('2d'), 60, 5, 60);   
+     boat.draw(this.canvas[0].element.getContext('2d'), 695, 565, 80);   
+     boat.draw(this.canvas[0].element.getContext('2d'), 140, 500, 120);   
     }
 
     clearCanvas(id) {
