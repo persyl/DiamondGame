@@ -3,6 +3,7 @@ import Africa from './africa';
 import PalmTree from './palmtree';
 import Boat from './boat';
 import steps from './steps';
+import Dice from './dice';
 
 class Diamond {
 
@@ -42,6 +43,9 @@ class Diamond {
         tunis.draw(ctx, 300, 40, 305);
 
         steps.draw(ctx);
+
+        const dice = new Dice();
+        dice.draw(ctx, 740, 520);
     }
 
     initGameBoard() {
