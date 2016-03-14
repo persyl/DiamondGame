@@ -45,7 +45,7 @@ class Diamond {
         steps.draw(ctx);
 
         const dice = new Dice();
-        dice.draw(ctx, 740, 520);
+        dice.draw(ctx, 740, 480);
     }
 
     initGameBoard() {
