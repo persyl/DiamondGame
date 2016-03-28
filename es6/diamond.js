@@ -21,31 +21,37 @@ class Diamond {
             'id': 'stepCanvas',
             'width': 830,
             'height': 894,
+        }, {
+            'element': {},
+            'id': 'diceCanvas',
+            'width': 830,
+            'height': 894,
         }];
     }
 
     init() {
         this.initGameBoard();
-        var ctx = this.canvas[1].element.getContext('2d');
-        var tanger = new City('TANGER', true);
+        const ctx = this.canvas[1].element.getContext('2d');
+        const tanger = new City('TANGER', true);
         tanger.draw(ctx, 170, 5, 175);
 
-        var canaria = new City('CANARIA', true);
+        const canaria = new City('CANARIA', true);
         canaria.draw(ctx, 0, 60, 5);
 
-        var marrakech = new City('Marrakech');
+        const marrakech = new City('Marrakech');
         marrakech.draw(ctx, 70, 130, 65);
 
-        var kairo = new City('KAIRO', true);
+        const kairo = new City('KAIRO', true);
         kairo.draw(ctx, 560, 80, 572);
 
-        var tunis = new City('Tunis');
+        const tunis = new City('Tunis');
         tunis.draw(ctx, 300, 40, 305);
 
         steps.draw(ctx);
 
+        const ctx2 = this.canvas[2].element.getContext('2d');
         const dice = new Dice();
-        dice.draw(ctx, 740, 480);
+        dice.draw(ctx2, 750, 490);
     }
 
     initGameBoard() {
@@ -57,11 +63,12 @@ class Diamond {
         this.addAllCanvas(pageContainer);
 
         this.doc.body.appendChild(pageContainer);
-        var africa = new Africa();
-        africa.draw(this.canvas[0].element.getContext('2d'), 0, 0);
+        const africa = new Africa();
+        const ctx = this.canvas[0].element.getContext('2d');
+        africa.draw(ctx, 0, 0);
 
-        this.addPalmTrees();
-        this.addBoats();
+        this.addPalmTrees(ctx);
+        this.addBoats(ctx);
     }
 
     addAllCanvas(container) {
@@ -76,33 +83,33 @@ class Diamond {
         });
     }
 
-    addPalmTrees() {
+    addPalmTrees(ctx) {
         var palmTree = new PalmTree();
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 80, 60, 50);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 350, 0, 70);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 400, 230, 50);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 100, 260, 50);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 570, 530, 70);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 775, 660, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 460, 690, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 490, 710, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 520, 710, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 550, 710, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 700, 430, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 730, 400, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 760, 360, 30);
-        palmTree.draw(this.canvas[0].element.getContext('2d'), 780, 320, 30);
+        palmTree.draw(ctx, 80, 60, 50);
+        palmTree.draw(ctx, 350, 0, 70);
+        palmTree.draw(ctx, 400, 230, 50);
+        palmTree.draw(ctx, 100, 260, 50);
+        palmTree.draw(ctx, 570, 530, 70);
+        palmTree.draw(ctx, 775, 660, 30);
+        palmTree.draw(ctx, 460, 690, 30);
+        palmTree.draw(ctx, 490, 710, 30);
+        palmTree.draw(ctx, 520, 710, 30);
+        palmTree.draw(ctx, 550, 710, 30);
+        palmTree.draw(ctx, 700, 430, 30);
+        palmTree.draw(ctx, 730, 400, 30);
+        palmTree.draw(ctx, 760, 360, 30);
+        palmTree.draw(ctx, 780, 320, 30);
     }
 
-    addBoats() {
+    addBoats(ctx) {
         var boat = new Boat();
-     boat.draw(this.canvas[0].element.getContext('2d'), 60, 5, 60);   
-     boat.draw(this.canvas[0].element.getContext('2d'), 695, 565, 80);   
-     boat.draw(this.canvas[0].element.getContext('2d'), 140, 500, 120);   
+        boat.draw(ctx, 60, 5, 60);
+        boat.draw(ctx, 695, 565, 80);
+        boat.draw(ctx, 140, 500, 120);
     }
 
     clearCanvas(id) {
-        var ctx = this.canvas[id].element.getContext('2d');
+        const ctx = this.canvas[id].element.getContext('2d');
         ctx.clearRect(0, 0, this.canvas[id].width, this.canvas[id].height);
     }
 

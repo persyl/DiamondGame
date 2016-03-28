@@ -13,7 +13,8 @@ module.exports = {
             test: path.join(__dirname, 'es6'),
             query: {
                 presets: ['es2015']
-            }
+            },
+            exclude: /node_modules/,
         }]
     },
     plugins: [
