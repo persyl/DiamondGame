@@ -4,6 +4,7 @@ import PalmTree from './palmtree';
 import Boat from './boat';
 import steps from './steps';
 import Dice from './dice';
+import User from './user';
 
 class Diamond {
 
@@ -24,6 +25,11 @@ class Diamond {
         }, {
             'element': {},
             'id': 'diceCanvas',
+            'width': 830,
+            'height': 894,
+        }, {
+            'element': {},
+            'id': 'userCanvas',
             'width': 830,
             'height': 894,
         }];
@@ -52,6 +58,16 @@ class Diamond {
         const ctx2 = this.canvas[2].element.getContext('2d');
         const dice = new Dice();
         dice.draw(ctx2, 750, 490);
+
+        const ctx3 = this.canvas[3].element.getContext('2d');
+        const userRed = new User('red');
+        const userBlue = new User('blue');
+        const userGreen = new User('green');
+        const userYellow = new User('yellow');
+        userRed.draw(ctx3, 165, 0);
+        userBlue.draw(ctx3, 190, 0);
+        userGreen.draw(ctx3, 555, 75);
+        userYellow.draw(ctx3, 580, 75);
     }
 
     initGameBoard() {

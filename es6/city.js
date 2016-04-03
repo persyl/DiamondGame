@@ -18,7 +18,7 @@ class City extends Marker {
         Marker.drawOneMarker(ctx, this, xPos, yPos);
         ctx.font = "11px Arial";
         ctx.fillStyle = 'white';
-        ctx.fillText(this.markerName, xPosText, (yPos + this.size / 2));
+        ctx.fillText(this.markerName, xPosText, (yPos + this.size-5));
     }
 }
 
