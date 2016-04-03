@@ -8,10 +8,13 @@ class Dice {
         ctx.font = "bold 38px Arial";
         ctx.fillStyle = 'white';
         const randomNumber = Math.floor((Math.random() * 6) + 1);
+        const randomXPositioning = Math.floor((Math.random() * 20) + 1);
+        const randomYPositioning = Math.floor((Math.random() * 20) + 1);
         const diceImg = new Image();
         diceImg.src = `./images/${randomNumber}.png`;
         diceImg.onload = () => {
-            ctx.drawImage(diceImg, xPos, yPos, wantedWidth, calcHeight);
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            ctx.drawImage(diceImg, xPos+randomXPositioning, yPos+randomYPositioning, wantedWidth, calcHeight);
         }
     }
 }

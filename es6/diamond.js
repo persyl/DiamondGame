@@ -55,10 +55,6 @@ class Diamond {
 
         steps.draw(ctx);
 
-        const ctx2 = this.canvas[2].element.getContext('2d');
-        const dice = new Dice();
-        dice.draw(ctx2, 750, 490);
-
         const ctx3 = this.canvas[3].element.getContext('2d');
         const userRed = new User('red');
         const userBlue = new User('blue');
@@ -73,11 +69,17 @@ class Diamond {
     initGameBoard() {
         const body = this.doc.querySelector('body');
         const pageContainer = this.doc.createElement('div');
+        pageContainer.setAttribute('class', 'page-container')
         const h1Element = this.doc.createElement('h1');
         h1Element.innerText = this;
         pageContainer.appendChild(h1Element);
+        const diceButton = this.doc.createElement('input');
+        diceButton.type = 'button';
+        diceButton.id = 'diceButton';
+        diceButton.value = 'Kasta tärningen';
+        diceButton.onclick = () => this.rollDice();
+        pageContainer.appendChild(diceButton);
         this.addAllCanvas(pageContainer);
-
         this.doc.body.appendChild(pageContainer);
         const africa = new Africa();
         const ctx = this.canvas[0].element.getContext('2d');
@@ -85,6 +87,12 @@ class Diamond {
 
         this.addPalmTrees(ctx);
         this.addBoats(ctx);
+    }
+
+    rollDice() {
+        const ctx2 = this.canvas[2].element.getContext('2d');
+        const dice = new Dice();
+        dice.draw(ctx2, 750, 90);
     }
 
     addAllCanvas(container) {
