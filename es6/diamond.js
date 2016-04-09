@@ -37,33 +37,8 @@ class Diamond {
 
     init() {
         this.initGameBoard();
-        const ctx = this.canvas[1].element.getContext('2d');
-        const tanger = new City('TANGER', true);
-        tanger.draw(ctx, 170, 5, 175);
+        this.initUsers();
 
-        const canaria = new City('CANARIA', true);
-        canaria.draw(ctx, 0, 60, 5);
-
-        const marrakech = new City('Marrakech');
-        marrakech.draw(ctx, 70, 130, 65);
-
-        const kairo = new City('KAIRO', true);
-        kairo.draw(ctx, 560, 80, 572);
-
-        const tunis = new City('Tunis');
-        tunis.draw(ctx, 300, 40, 305);
-
-        steps.draw(ctx);
-
-        const ctx3 = this.canvas[3].element.getContext('2d');
-        const userRed = new User('red');
-        const userBlue = new User('blue');
-        const userGreen = new User('green');
-        const userYellow = new User('yellow');
-        userRed.draw(ctx3, 165, 0);
-        userBlue.draw(ctx3, 190, 0);
-        userGreen.draw(ctx3, 555, 75);
-        userYellow.draw(ctx3, 580, 75);
     }
 
     initGameBoard() {
@@ -87,6 +62,37 @@ class Diamond {
 
         this.addPalmTrees(ctx);
         this.addBoats(ctx);
+
+        const ctx1 = this.canvas[1].element.getContext('2d');
+        const tanger = new City('TANGER', true);
+        tanger.draw(ctx1, 170, 5, 175);
+
+        const canaria = new City('CANARIA', true);
+        canaria.draw(ctx1, 0, 60, 5);
+
+        const marrakech = new City('Marrakech');
+        marrakech.draw(ctx1, 70, 130, 65);
+
+        const kairo = new City('KAIRO', true);
+        kairo.draw(ctx1, 560, 80, 572);
+
+        const tunis = new City('Tunis');
+        tunis.draw(ctx1, 300, 40, 305);
+
+        steps.draw(ctx1);
+
+    }
+
+    initUsers() {
+        const ctx3 = this.canvas[3].element.getContext('2d');
+        const userRed = new User('red');
+        const userBlue = new User('blue');
+        const userGreen = new User('green');
+        const userYellow = new User('yellow');
+        userRed.draw(ctx3, 165, 0);
+        userBlue.draw(ctx3, 190, 0);
+        userGreen.draw(ctx3, 555, 75);
+        userYellow.draw(ctx3, 580, 75);
     }
 
     rollDice() {
