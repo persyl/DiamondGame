@@ -46,7 +46,7 @@ class Diamond {
         const pageContainer = this.doc.createElement('div');
         pageContainer.setAttribute('class', 'page-container')
         const h1Element = this.doc.createElement('h1');
-        h1Element.innerText = this;
+        h1Element.innerHTML = this;
         pageContainer.appendChild(h1Element);
         const diceButton = this.doc.createElement('input');
         diceButton.type = 'button';
@@ -152,7 +152,7 @@ class Diamond {
     // }
 
     toString() {
-        return 'Hunt for lost diamond!';
+        return 'Hunt for lost diamond! (Per Lundkvist &copy;)';
     }
 }
 
