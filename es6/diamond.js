@@ -96,9 +96,10 @@ class Diamond {
     }
 
     rollDice() {
-        const ctx2 = this.canvas[2].element.getContext('2d');
+        // const ctx2 = this.canvas[2].element.getContext('2d');
         const dice = new Dice();
-        dice.draw(ctx2, 750, 90);
+        // dice.draw(ctx2, 750, 90);
+        dice.throwDice();
     }
 
     addAllCanvas(container) {
