@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hunt for the lost diamond (Per Lundkvist &copy;)</title>
+    <style>
+    body {
+        font-family: Verdana, Arial;
+        font-size: 10px;
+        background-color: #0077BE;
+    }
+    
+    .page-container {
+        position: relative;
+    }
+    
+    canvas {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+    }
+    
+    input[type='button'] {
+        border: none;
+        display: inline-block;
+        padding: 16px;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        left: 780px;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+    }
+    
+    input[type='button']:hover {
+        background-color: #4A4141;
+        cursor: pointer;
+    }
+    
+    .svg-dice {
+        position: absolute;
+        top: 110px;
+        left: 800px;
+        transition: width 1s, height 1s;
+        border: 2px solid #333333;
+        border-radius: 8px;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .svg-dice--large {
+        width: 100px;
+        height: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <script src="bundle.js"></script>
+</body>
+
+</html>
